@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4A1F55">
+  <meta name="description" content="Latihan Mandiri UTS Komunikasi Data dan Jaringan Komputer (KDJK Bab 1–6): Ringkasan, Flashcard, Pilihan Ganda, Benar/Salah, Cocokkan, Isian Singkat, Esai & Simulasi Ujian">
+  <title>Latihan UTS Komunikasi Data dan Jaringan Komputer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Knewave&family=Plus+Jakarta+Sans:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tools.css">
+  <link rel="stylesheet" href="css/sim.css">
+</head>
+<body>
+  <main>
+    <header class="hd">
+      <div class="sk">UTS</div>
+      <h1>Latihan UTS<br>KDJK</h1>
+      <span class="rb">KDJK · Bab 1–6 (Leon-Garcia & Widjaja)</span>
+    </header>
+
+    <div id="tabs-sentinel"></div>
+    <div class="tabs-wrap" id="tabs-wrap">
+      <nav class="tabs" id="tabs" role="tablist" aria-label="Navigasi Utama"></nav>
+    </div>
+    <div class="chips-wrap" id="chips-wrap">
+      <div class="chips" id="chips" role="group" aria-label="Filter Bab"></div>
+    </div>
+    <div id="app"></div>
+    <div class="foot">
+      <button id="btn-export">📥 Ekspor Progres</button>
+      <button id="btn-import">📤 Impor Progres</button>
+      <button id="rsall">Reset Data</button>
+      <input type="file" id="file-import-input" accept=".json" style="display:none">
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/tools.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => {
+          console.warn('SW registration failed:', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
